@@ -1,0 +1,20 @@
+-- term declaration
+-- "favoutiteCar has type Text"
+favoutiteCar : Text
+favoutiteCar = "Volvo"
+
+-- Tuples
+-- Join together values of different types
+favouriteCars : (Text, Text, Nat)
+favouriteCars = ("Volvo", "BMW", 2020)
+
+-- tupble pattern decomposition
+getByteSize : (Text, Bytes, Text) -> Nat
+getByteSize tuple3 =
+  use Bytes ++
+  use Text toUtf8
+  first = at1 tuple3
+  bytes = at2 tuple3
+  last = at3 tuple3
+  Bytes.size (toUtf8 first ++ bytes ++ toUtf8 last)
+> getByteSize ("Shepherds", 0xsdeadbeef, "Pie")

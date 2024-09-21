@@ -1,0 +1,27 @@
+-- WARNING: Functions are also terms in Unison, so they are
+-- governed by the same conventions.
+
+-- Unison functions are curried 
+
+addNums : Nat -> Nat -> Nat
+addNums n1 n2 =
+    use Nat +
+    n1 + n2
+
+addOneCurried : Nat -> Nat
+addOneCurried count =
+  plusOne : Nat -> Nat
+  plusOne = addNums 1
+  plusOne count
+> addOneCurried 100
+
+-- Function arguments are separated by spaces
+> addNums 1 2
+
+-- Order how arguments are applied 
+
+add3 : Nat -> Nat -> Nat -> Nat
+add3 a b c = a + b + c
+
+-- Order
+> ((add3 1) 2) 3

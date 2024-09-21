@@ -1,0 +1,27 @@
+-- List
+cars : [Text]
+cars = ["Toyota Prius", "Ford Focus", "Honda Civic"]
+
+-- Empty list is represented by `[]` or List.empty
+-- --------------------------------------------------------------------------------
+
+-- Maps
+-- Kinda like a dictionary I guess
+-- TODO: Need to look it up
+-- 
+-- Currently Unison does not have special data.Map construction syntax so one easy way to create a multi item map is from a List of tuples
+--
+-- distributed.lib.base.data.Map.fromList [(1, "a"), (2, "b"), (3, "c")]
+-- ⧨
+-- internal.Bin
+--   3
+--   2
+--   "b"
+--   (internal.Bin 1 1 "a" internal.Tip internal.Tip)
+--   (internal.Bin 1 3 "c" internal.Tip internal.Tip)
+-- --------------------------------------------------------------------------------
+
+-- Sets
+-- TODO: Need to look it up
+
+

@@ -1,0 +1,42 @@
+-- Block is a section of unison code is grouped together to organize smaller units of code
+
+-- Block starts with indentation or "let" 
+
+testBlock : Nat -> Text
+testBlock n =
+    text = Nat.toText n
+    Text.repeat n text
+
+> testBlock 3
+
+-- With "let"
+
+testBlock2 : Nat -> Text
+testBlock2 n = let
+    text = Nat.toText n
+    Text.repeat n text
+
+> testBlock2 3
+
+-- Blocks can be nested
+-- The last thing evaluated is returned
+nesting : [Text]
+nesting =
+    parent = "outer"
+    inner1 = let
+        child1 = "child1"
+        inner2 = let
+            child2 = "child2"
+            [parent, child1, child2]
+        inner2
+    inner1
+
+> nesting
+
+-- Lambdas
+-- TODO: Look into it
+
+-- Type functions (or "polymorphic" functions)
+-- Type variables are introduced in a type signature with lower case letters
+-- Function.id : a -> a
+-- Function.id a = a

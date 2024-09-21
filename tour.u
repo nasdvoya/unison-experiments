@@ -15,15 +15,14 @@ square x =
 
 -- Call the function using "watch expression"
 > square 3
-
 -- -------------------------
+
 -- Some watch expressions
 > List.reverse [1,2,3,4,5]
 > 4 + 6
 > not true
 -- -------------------------
 
--- -------------------------
 -- Test square function
 -- Name of expression is "square.tests.ex1"
 -- But could be named anything
@@ -31,7 +30,6 @@ test> square.tests.ex1 =
     verify '(ensureEqual (square 4) 16)
 -- -------------------------
 
--- -------------------------
 -- Property based testing
 test> square.tests.prop1 =
     verify do
@@ -42,6 +40,19 @@ test> square.tests.prop1 =
         ensure (square a * square b == square (a * b))
 -- -------------------------
 
--- -------------------------
 -- In UCM, type "edit square" to edit the funtions
 -- "edit square"
+
+-- use base
+--
+-- square : Nat -> Nat
+-- square x =
+--     sum (map (x -> x * 2 + 1) (range 0 x))
+--
+-- sum : [Nat] -> Nat
+-- sum = foldLeft (+) 0
+-- In UCM, type "update" to update the functionOf
+-- And run "test" again
+-- -------------------------
+
+
