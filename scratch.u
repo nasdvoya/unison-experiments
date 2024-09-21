@@ -1,0 +1,47 @@
+-- Single line comment
+{-
+ Multi-line comments
+-}
+myTerm = List.map(x -> x * 10) [1,2,3,4,5,6,7,8,9,10]
+> myTerm
+
+-- Square is a function whuch takes in a Nat and returns a Nat
+-- So basically it takes an argument called x and it returns x multiplied by itself
+square: Nat -> Nat
+square x =
+-- After "=" is the body of the function
+    use Nat *
+    x * x
+
+-- Call the function using "watch expression"
+> square 3
+
+-- -------------------------
+-- Some watch expressions
+> List.reverse [1,2,3,4,5]
+> 4 + 6
+> not true
+-- -------------------------
+
+-- -------------------------
+-- Test square function
+-- Name of expression is "square.tests.ex1"
+-- But could be named anything
+test> square.tests.ex1 =
+    verify '(ensureEqual (square 4) 16)
+-- -------------------------
+
+-- -------------------------
+-- Property based testing
+test> square.tests.prop1 =
+    verify do
+        Each.repeat 100
+        a = Random.natIn 0 100
+        b = Random.natIn 0 100
+        -- Result of the block
+        ensure (square a * square b == square (a * b))
+-- -------------------------
+
+-- -------------------------
+-- In UCM, type "edit square" to edit the funtions
+-- "edit square"

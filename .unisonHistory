@@ -1,0 +1,31 @@
+edit square
+find
+test
+view square
+add
+view distributed
+ls distributed
+view lib.base
+view lib.base.data.List.reverse
+view lib.base
+view lib
+clear
+view lib.base.data.List.reverse
+reflog
+reset #ov9trfgq8h
+reflog
+ui
+view lib.base.data.List.reverse
+move lib.base.data.List.foldLeft lib.base.data.List.foldl
+view lib.base.data.List.reverse.doc
+find reverse
+find : [a] -> [a]
+find : [a] -> [
+find reverse
+view lib.base.data.Graph.reverse.doc#8kef37dla10jti7egvb076acuep4geq2t2uchhmpruvl6ockk6gr42shpd303m4r20ii9kius2jj89al1642bbe2i7u0smhf4kuqsro
+find reverse
+find : [a] -> [a]
+view lib.base.data.Graph.reverse.doc#8kef37dla10jti7egvb076acuep4geq2t2uchhmpruvl6ockk6gr42shpd303m4r20ii9kius2jj89al1642bbe2i7u0smhf4kuqsro
+find reverse
+ls lib.base.data.List
+ui
