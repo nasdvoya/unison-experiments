@@ -1,0 +1,20 @@
+examples.query : '{IO, Exception} HttpResponse
+examples.query _ =
+  use Path /
+  google = Authority None (HostName "www.google.com") None
+  path = root / "search"
+  query = Query.empty & ("q", "Unison Programming Language")
+  uri =
+    URI
+      Scheme.https
+      (Some google)
+      path
+      (toRawQuery query)
+      Fragment.empty
+  Http.run do Http.get uri
+
+example.printhis : '{IO, Exception} ()
+example.printhis _ = printLine 
+
+> example.printhis
+

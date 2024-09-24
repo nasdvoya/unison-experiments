@@ -1,3 +1,10 @@
+run example.printhis
+add
+find commandline
+find print
+lib.install @unison/http
+quit
+q
 quit
 a = 
 test
