@@ -1,5 +1,21 @@
-examples.query : '{IO, Exception} HttpResponse
-examples.query _ =
+-- example.query : '{IO, Exception} HttpResponse
+-- example.query _ =
+--   use Path /
+--   google = Authority None (HostName "www.google.com") None
+--   path = root / "search"
+--   query = Query.empty & ("q", "Unison Programming Language")
+--   uri =
+--     URI
+--       Scheme.https
+--       (Some google)
+--       path
+--       (toRawQuery query)
+--       Fragment.empty
+--   Http.run do Http.get uri
+
+
+example.query : '{IO, Exception} ()
+example.query _ = 
   use Path /
   google = Authority None (HostName "www.google.com") None
   path = root / "search"
@@ -11,10 +27,18 @@ examples.query _ =
       path
       (toRawQuery query)
       Fragment.empty
-  Http.run do Http.get uri
+  
+  response = Http.run do Http.get uri
+  
+  match response with
+    HttpResponse (Status code msg) version headers body -> 
+      match code with
+        200 -> 
+          printLine "Response success!"
+        _ -> 
+          printLine ("Failed with status: " ++ toText code ++ " - " ++ msg)
 
 example.printhis : '{IO, Exception} ()
-example.printhis _ = printLine 
+example.printhis _ = printLine "Hello World"
 
-> example.printhis
 
